@@ -6,25 +6,6 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- Remove keybind
-keymap.del("n", ";;")
-keymap.del("n", ";f")
-keymap.del("n", ";r")
-keymap.del("n", ";e")
-keymap.del("n", ";s")
-keymap.del("n", ";c")
-keymap.del("n", "s")
-
--- Bind default navigations NORMAL mode
-keymap.set("n", "j", "h", opts)
-keymap.set("n", "k", "j", opts)
-keymap.set("n", "l", "k", opts)
-keymap.set("n", ";", "l", opts)
-
--- Bind default navigations VISUAL mode
-keymap.set("v", "j", "h", opts)
-keymap.set("v", "k", "j", opts)
-keymap.set("v", "l", "k", opts)
-keymap.set("v", ";", "l", opts)
 
 -- Support delete single character without store it in clipboard
 keymap.set("n", "x", '"_x')
@@ -69,10 +50,10 @@ keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
 
 -- Move window
-keymap.set("n", "sj", "<C-w>h")
-keymap.set("n", "sk", "<C-w>j")
-keymap.set("n", "sl", "<C-w>k")
-keymap.set("n", "s;", "<C-w>l")
+keymap.set("n", "sh", "<C-w>h")
+keymap.set("n", "sj", "<C-w>j")
+keymap.set("n", "sk", "<C-w>k")
+keymap.set("n", "sl", "<C-w>l")
 
 -- Close window
 keymap.set("n", "sw", "<C-w>c", opts)

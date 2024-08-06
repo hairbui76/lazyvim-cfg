@@ -169,11 +169,10 @@ return {
 
           -- custom mappings
           vim.keymap.set("n", "t", api.node.open.tab, opts("Tab"))
-          vim.keymap.set("n", "j", "<Left>")
-          vim.keymap.set("n", "k", "<Up>")
-          vim.keymap.set("n", "l", "<Down>")
-          vim.keymap.set("n", ";", "<Right>")
-          vim.keymap.set("n", "gg", api.node.open.edit, opts("Open"))
+          vim.keymap.set("n", "h", "<Left>")
+          vim.keymap.set("n", "j", "<Up>")
+          vim.keymap.set("n", "k", "<Down>")
+          vim.keymap.set("n", "l", "<Right>")
         end,
         actions = {
           open_file = {
