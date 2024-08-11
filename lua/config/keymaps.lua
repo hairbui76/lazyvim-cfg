@@ -6,6 +6,9 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- Remove keybind
+keymap.del("n", "s")
+keymap.del("o", "s")
+keymap.del("x", "s")
 
 -- Support delete single character without store it in clipboard
 keymap.set("n", "x", '"_x')
@@ -35,6 +38,10 @@ keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
 -- File explorer with NvimTree
 keymap.set("n", "<Leader>f", ":NvimTreeFindFile<Return>", opts)
 keymap.set("n", "<Leader>t", ":NvimTreeToggle<Return>", opts)
+
+keymap.set("n", "<Leader>L", "0", opts)
+keymap.set("n", "<Leader>l", "^", opts)
+keymap.set("n", "<leader>e", "$", opts)
 
 -- History explorer with UndoTree
 keymap.set("n", "<Leader>h", ":UndotreeToggle<Return>", opts)
@@ -66,8 +73,8 @@ keymap.set("n", "<C-S-k>", "<C-w>+")
 keymap.set("n", "<C-S-j>", "<C-w>-")
 
 -- Move line NORMAL
-keymap.set("n", "<A-l>", ":m .-2<CR>==") -- line up
-keymap.set("n", "<A-k>", ":m .+1<CR>==") -- line down
+keymap.set("n", "<A-k>", ":m .-2<CR>==") -- line up
+keymap.set("n", "<A-j>", ":m .+1<CR>==") -- line down
 
 -- Move line VISUAL
 keymap.set("v", "<A-l>", ":m '<-2<CR>gv=gv") -- line up

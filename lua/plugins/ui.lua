@@ -165,14 +165,15 @@ return {
           end
 
           -- default mappings
-          api.config.mappings.default_on_attach(bufnr)
+          -- api.config.mappings.default_on_attach(bufnr)
 
           -- custom mappings
           vim.keymap.set("n", "t", api.node.open.tab, opts("Tab"))
-          vim.keymap.set("n", "h", "<Left>")
-          vim.keymap.set("n", "j", "<Up>")
-          vim.keymap.set("n", "k", "<Down>")
-          vim.keymap.set("n", "l", "<Right>")
+          vim.keymap.set("n", "<Tab>", api.node.open.preview, opts("Open Preview"))
+          vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open"))
+          vim.keymap.set("n", "n", api.fs.create, opts("Create file or directory"))
+          vim.keymap.set("n", "e", api.fs.rename_basename, opts("Rename: Basename"))
+          vim.keymap.set("n", "D", api.fs.remove, opts("Remove"))
         end,
         actions = {
           open_file = {
